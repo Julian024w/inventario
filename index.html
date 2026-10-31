@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inventario dinámico de una tienda con controles de stock en JavaScript.">
+  <title>Inventario de la tienda</title>
+  <link rel="stylesheet" href="estilo/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div>
+        <p class="sobretitulo">Panel de control</p>
+        <h1>Inventario de la tienda</h1>
+        <p class="introduccion">
+          Consulta existencias, detecta productos por reponer y actualiza las cantidades.
+        </p>
+      </div>
+      <span class="indicador">
+        <span class="punto"></span> Inventario activo
+      </span>
+    </header>
+
+    <section class="panel" aria-labelledby="titulo-tabla">
+      <div class="panel-encabezado">
+        <div>
+          <h2 id="titulo-tabla">Productos</h2>
+          <p>Usa los botones para ajustar el stock. El resumen se actualizará automáticamente.</p>
+        </div>
+        <span class="contador" id="contador-productos"></span>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Mínimo</th>
+              <th scope="col">Subtotal</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section
+      id="resumen"
+      class="resumen"
+      aria-live="polite"
+      aria-labelledby="titulo-resumen"
+    >
+      <h2 id="titulo-resumen">Resumen del inventario</h2>
+    </section>
+
+    <footer>
+      Los cambios de cantidad se conservan mientras esta página permanezca abierta.
+    </footer>
+  </main>
+
+  
+</body>
+</html>
